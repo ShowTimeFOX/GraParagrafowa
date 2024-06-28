@@ -2,7 +2,15 @@
     ViewData["Title"] = "Home Page";
 }
 
+@section head {
+    <link rel="stylesheet" href="~/css/home.css" />
+}
+
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Menu główne</h1>
+    <div id="main">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Story" asp-action="Index"><img src="~/images/creator.png" alt="Kreator opowieści" /></a>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Story" asp-action="Player"><img src="~/images/player.png" alt="Zagraj" /></a>
+        
+    </div>
 </div>

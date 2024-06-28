@@ -1,0 +1,7 @@
+﻿img {
+    width: 400px;
+}
+
+img:hover{
+    background: lightgray;
+}

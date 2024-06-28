@@ -8,5 +8,10 @@ namespace GraParagrafowa.Controllers
         {
             return View();
         }
+
+        public IActionResult Player()
+        {
+            return View();
+        }
     }
 }
