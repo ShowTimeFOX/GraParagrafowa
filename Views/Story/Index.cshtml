@@ -8,122 +8,184 @@
 }
 
 <h1>Kreator</h1>
-<div id="controls">
+@* div id="controls">
     <img src="~/images/start-button.png" alt="Start" />
     <img src="~/images/normal-button.png" alt="Normal" />
     <img src="~/images/decision-button.png" alt="Decision" />
     <img src="~/images/end-button.png" alt="Stop" />
-</div>
-<div id="zoom-container">
+</div> *@
+
     <div id="zoom-content">
-        <!-- Twoje treści tutaj -->
-        <img src="~/images/start.png" id="start" alt="Sample Image" />
-        <div class="line"></div>
-        <div class="normal">
-            <input type="file" />
-            <textarea></textarea>
-        </div>
-        <div class="line"></div>
-        <div class="decision-container">
-            <div class="decision">
-                <input type="file" />
-                <textarea></textarea>
-            </div>
-            <div class="dupa">
-                <div class="custom-div">
-                    <div class="line"></div>
-                    <div class="normal">
-                        <input type="file" />
-                        <textarea></textarea>
-                    </div>
-                    <div class="line"></div>
-                    <div class="decision-container">
-                        <div class="decision">
-                            <input type="file" />
-                            <textarea></textarea>
-                        </div>
-                        <div class="dupa">
-                            <div class="custom-div">
-                                <div class="line"></div>
-                                <div class="normal">
-                                    <input type="file" />
-                                    <textarea></textarea>
-                                </div>
-                            </div>
-                            <div class="custom-div">
-                                <div class="line"></div>
-                                <div class="normal">
-                                    <input type="file" />
-                                    <textarea></textarea>
-                                </div>
-                            </div>
-                            <div class="custom-div">
-                                <div class="line"></div>
-                                <div class="normal">
-                                    <input type="file" />
-                                    <textarea></textarea>
-                                </div>
-                            </div>
-                        </div>
 
+        @* <div class="global">
+        <div class="parent">
+
+        </div>
+        <div class="children">
+
+        </div>
+        </div> *@
+
+        <div class="global">
+            <div class="parent">                
+                opis <input type="type" name="name" value="" />
+                obraz <input type="file" name="name" value="" />
+                <hr />
+                ilosc decyzji
+                <select>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>end</option>
+                </select>
+                <input type="button" value="Stwórz" name="name" value="" />
+                <input type="button" value="Usuń" name="name" value="" />
+            </div>
+            <div class="children">
+                <div class="global">
+                    <div class="parent">
+                        opis <input type="type" name="name" value="" />
+                        obraz <input type="file" name="name" value="" />
+                        <hr />
+                        ilosc decyzji
+                        <select>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>end</option>
+                        </select>
+                        <input type="button" value="Stwórz" name="name" value="" />
+                        <input type="button" value="Usuń" name="name" value="" />
+                    </div>
+                    <div class="children">
+                        <div class="global">
+                            <div class="parent">
+                                opis <input type="type" name="name" value="" />
+                                obraz <input type="file" name="name" value="" />
+                                <hr />
+                                ilosc decyzji
+                                <select>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>end</option>
+                                </select>
+                                <input type="button" value="Stwórz" name="name" value="" />
+                                <input type="button" value="Usuń" name="name" value="" />
+                            </div>
+                            <div class="children">
+                            </div>
+                        </div>
+                        <div class="global">
+                            <div class="parent">
+                                opis <input type="type" name="name" value="" />
+                                obraz <input type="file" name="name" value="" />
+                                <hr />
+                                ilosc decyzji
+                                <select>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>end</option>
+                                </select>
+                                <input type="button" value="Stwórz" name="name" value="" />
+                                <input type="button" value="Usuń" name="name" value="" />
+                            </div>
+                            <div class="children">
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="custom-div">
-                    <div class="line"></div>
-                    <div class="normal">
-                        <input type="file" />
-                        <textarea></textarea>
+                <div class="global">
+                    <div class="parent">
+                        opis <input type="type" name="name" value="" />
+                        obraz <input type="file" name="name" value="" />
+                        <hr />
+                        ilosc decyzji
+                        <select>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>end</option>
+                        </select>
+                        <input type="button" value="Stwórz" name="name" value="" />
+                        <input type="button" value="Usuń" name="name" value="" />
                     </div>
-                    <div class="line"></div>
-                    <div class="decision-container">
-                        <div class="decision">
-                            <input type="file" />
-                            <textarea></textarea>
-                        </div>
-                        <div class="dupa">
-                            <div class="custom-div">
-                                <div class="line"></div>
-                                <div class="normal">
-                                    <input type="file" />
-                                    <textarea></textarea>
-                                </div>
+                    <div class="children">
+                        <div class="global">
+                            <div class="parent">
+                                opis <input type="type" name="name" value="" />
+                                obraz <input type="file" name="name" value="" />
+                                <hr />
+                                ilosc decyzji
+                                <select>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>end</option>
+                                </select>
+                                <input type="button" value="Stwórz" name="name" value="" />
+                                <input type="button" value="Usuń" name="name" value="" />
                             </div>
-                            <div class="custom-div">
-                                <div class="line"></div>
-                                <div class="normal">
-                                    <input type="file" />
-                                    <textarea></textarea>
-                                </div>
-                            </div>
-                            <div class="custom-div">
-                                <div class="line"></div>
-                                <div class="normal">
-                                    <input type="file" />
-                                    <textarea></textarea>
-                                </div>
+                            <div class="children">
                             </div>
                         </div>
-                </div>
-                <div class="custom-div">
-                    <div class="line"></div>
-                    <div class="normal">
-                        <input type="file" />
-                        <textarea></textarea>
+                        <div class="global">
+                            <div class="parent">
+                                opis <input type="type" name="name" value="" />
+                                obraz <input type="file" name="name" value="" />
+                                <hr />
+                                ilosc decyzji
+                                <select>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>end</option>
+                                </select>
+                                <input type="button" value="Stwórz" name="name" value="" />
+                                <input type="button" value="Usuń" name="name" value="" />
+                            </div>
+                            <div class="children">
+                            </div>
+                        </div>
+                        <div class="global">
+                            <div class="parent">
+                                opis <input type="type" name="name" value="" />
+                                obraz <input type="file" name="name" value="" />
+                                <hr />
+                                ilosc decyzji
+                                <select>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>end</option>
+                                </select>
+                                <input type="button" value="Stwórz" name="name" value="" />
+                                <input type="button" value="Usuń" name="name" value="" />
+                            </div>
+                            <div class="children">
+                            </div>
+                        </div>
                     </div>
-                        <div class="line"></div>
-                        <div class="normal">
-                            <input type="file" />
-                            <textarea></textarea>
-                        </div>
                 </div>
             </div>
-            
         </div>
-
-        
 
     </div>
-</div>
-<div id="main"></div>
-
 

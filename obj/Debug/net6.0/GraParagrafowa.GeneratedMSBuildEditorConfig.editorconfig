@@ -9,47 +9,47 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GraParagrafowa
 build_property.RootNamespace = GraParagrafowa
-build_property.ProjectDir = C:\Users\User\Documents\GitHub\GraParagrafowa\
+build_property.ProjectDir = C:\Users\barte\Desktop\ShowTime\Studia\semestr06\PZ\GraParagrafowa\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\User\Documents\GitHub\GraParagrafowa
+build_property.MSBuildProjectDirectory = C:\Users\barte\Desktop\ShowTime\Studia\semestr06\PZ\GraParagrafowa
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/User/Documents/GitHub/GraParagrafowa/Views/Home/Index.cshtml]
+[C:/Users/barte/Desktop/ShowTime/Studia/semestr06/PZ/GraParagrafowa/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Documents/GitHub/GraParagrafowa/Views/Home/Privacy.cshtml]
+[C:/Users/barte/Desktop/ShowTime/Studia/semestr06/PZ/GraParagrafowa/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Documents/GitHub/GraParagrafowa/Views/Shared/Error.cshtml]
+[C:/Users/barte/Desktop/ShowTime/Studia/semestr06/PZ/GraParagrafowa/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Documents/GitHub/GraParagrafowa/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/barte/Desktop/ShowTime/Studia/semestr06/PZ/GraParagrafowa/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Documents/GitHub/GraParagrafowa/Views/Story/Index.cshtml]
+[C:/Users/barte/Desktop/ShowTime/Studia/semestr06/PZ/GraParagrafowa/Views/Story/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Documents/GitHub/GraParagrafowa/Views/Story/Player.cshtml]
+[C:/Users/barte/Desktop/ShowTime/Studia/semestr06/PZ/GraParagrafowa/Views/Story/Player.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcnlcUGxheWVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Documents/GitHub/GraParagrafowa/Views/_ViewImports.cshtml]
+[C:/Users/barte/Desktop/ShowTime/Studia/semestr06/PZ/GraParagrafowa/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Documents/GitHub/GraParagrafowa/Views/_ViewStart.cshtml]
+[C:/Users/barte/Desktop/ShowTime/Studia/semestr06/PZ/GraParagrafowa/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Documents/GitHub/GraParagrafowa/Views/Shared/_Layout.cshtml]
+[C:/Users/barte/Desktop/ShowTime/Studia/semestr06/PZ/GraParagrafowa/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-p3w0ak79oo
