@@ -4,17 +4,11 @@
 
 @section head {
     <link rel="stylesheet" href="~/css/creator.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="~/js/Kreator.js"></script>
 }
 
 <h1>Kreator</h1>
-@* div id="controls">
-    <img src="~/images/start-button.png" alt="Start" />
-    <img src="~/images/normal-button.png" alt="Normal" />
-    <img src="~/images/decision-button.png" alt="Decision" />
-    <img src="~/images/end-button.png" alt="Stop" />
-</div> *@
-
     <div id="zoom-content">
 
         @* <div class="global">
@@ -27,12 +21,13 @@
         </div> *@
 
         <div class="global">
-            <div class="parent">                
-                opis <input type="type" name="name" value="" />
-                obraz <input type="file" name="name" value="" />
+            <div class="parent">
+                <input type="hidden" name="id" value="0" />                
+                opis <input type="type" name="description" value="" />
+                obraz <input type="file" name="imagePath" value="" />
                 <hr />
                 ilosc decyzji
-                <select>
+                <select name="decisionCount">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -40,152 +35,12 @@
                     <option>5</option>
                     <option>end</option>
                 </select>
-                <input type="button" value="Stwórz" name="name" value="" />
-                <input type="button" value="Usuń" name="name" value="" />
+                <input type="hidden" name="children" value="" />
+            <input type="button" value="Stwórz" class="create-button" name="Create" value="" />
+            @* <input type="button" value="Usuń" class="delete-button" name="Delete" value="" /> *@
             </div>
             <div class="children">
-                <div class="global">
-                    <div class="parent">
-                        opis <input type="type" name="name" value="" />
-                        obraz <input type="file" name="name" value="" />
-                        <hr />
-                        ilosc decyzji
-                        <select>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>end</option>
-                        </select>
-                        <input type="button" value="Stwórz" name="name" value="" />
-                        <input type="button" value="Usuń" name="name" value="" />
-                    </div>
-                    <div class="children">
-                        <div class="global">
-                            <div class="parent">
-                                opis <input type="type" name="name" value="" />
-                                obraz <input type="file" name="name" value="" />
-                                <hr />
-                                ilosc decyzji
-                                <select>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                    <option>end</option>
-                                </select>
-                                <input type="button" value="Stwórz" name="name" value="" />
-                                <input type="button" value="Usuń" name="name" value="" />
-                            </div>
-                            <div class="children">
-                            </div>
-                        </div>
-                        <div class="global">
-                            <div class="parent">
-                                opis <input type="type" name="name" value="" />
-                                obraz <input type="file" name="name" value="" />
-                                <hr />
-                                ilosc decyzji
-                                <select>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                    <option>end</option>
-                                </select>
-                                <input type="button" value="Stwórz" name="name" value="" />
-                                <input type="button" value="Usuń" name="name" value="" />
-                            </div>
-                            <div class="children">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="global">
-                    <div class="parent">
-                        opis <input type="type" name="name" value="" />
-                        obraz <input type="file" name="name" value="" />
-                        <hr />
-                        ilosc decyzji
-                        <select>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>end</option>
-                        </select>
-                        <input type="button" value="Stwórz" name="name" value="" />
-                        <input type="button" value="Usuń" name="name" value="" />
-                    </div>
-                    <div class="children">
-                        <div class="global">
-                            <div class="parent">
-                                opis <input type="type" name="name" value="" />
-                                obraz <input type="file" name="name" value="" />
-                                <hr />
-                                ilosc decyzji
-                                <select>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                    <option>end</option>
-                                </select>
-                                <input type="button" value="Stwórz" name="name" value="" />
-                                <input type="button" value="Usuń" name="name" value="" />
-                            </div>
-                            <div class="children">
-                            </div>
-                        </div>
-                        <div class="global">
-                            <div class="parent">
-                                opis <input type="type" name="name" value="" />
-                                obraz <input type="file" name="name" value="" />
-                                <hr />
-                                ilosc decyzji
-                                <select>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                    <option>end</option>
-                                </select>
-                                <input type="button" value="Stwórz" name="name" value="" />
-                                <input type="button" value="Usuń" name="name" value="" />
-                            </div>
-                            <div class="children">
-                            </div>
-                        </div>
-                        <div class="global">
-                            <div class="parent">
-                                opis <input type="type" name="name" value="" />
-                                obraz <input type="file" name="name" value="" />
-                                <hr />
-                                ilosc decyzji
-                                <select>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                    <option>end</option>
-                                </select>
-                                <input type="button" value="Stwórz" name="name" value="" />
-                                <input type="button" value="Usuń" name="name" value="" />
-                            </div>
-                            <div class="children">
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
-
     </div>
 
