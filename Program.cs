@@ -1,3 +1,6 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using GraParagrafowa.Data;
 namespace GraParagrafowa
 {
     public class Program
@@ -5,6 +8,8 @@ namespace GraParagrafowa
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.AddDbContext<GraParagrafowaContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("GraParagrafowaContext") ?? throw new InvalidOperationException("Connection string 'GraParagrafowaContext' not found.")));
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();

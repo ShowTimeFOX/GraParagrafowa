@@ -19,6 +19,10 @@
         // Pobranie wartości z pola select
         var decisionCount = $parentDiv.find('select[name="decisionCount"]').val();
 
+        // Usunięcie istniejących inputów typu text z atrybutem choice-id
+        $parentDiv.find('input[type="text"][choice-id]').remove();
+        $parentDiv.find('label[choice-id]').remove();
+
         // Tworzenie odpowiedniej liczby elementów
         for (var i = 0; i < decisionCount; i++) {
             // Tworzenie nowego elementu global
@@ -28,12 +32,13 @@
             var $newParent = $('<div>', { class: 'parent' });
 
             // Nadawanie unikalnego ID
-            var uniqueId = 'element-' + idCounter++;
+            var uniqueId = idCounter++;
 
             // Dodanie zawartości do elementu parent
             $newParent.html(`
+                <p>ID dziecka: ${uniqueId}</p>
                 <input type="hidden" name="id" value="${uniqueId}" />                
-                opis <input type="text" name="description" value="" />
+                opis <textarea name="description"></textarea>
                 obraz <input type="file" name="imagePath" value="" />
                 <hr />
                 ilosc decyzji
@@ -63,6 +68,17 @@
             var childrenIds = $parentDiv.find('input[name="children"]').val();
             childrenIds += (childrenIds.length > 0 ? ';' : '') + uniqueId;
             $parentDiv.find('input[name="children"]').val(childrenIds);
+
+            // Dodanie nowego inputa text z atrybutem choice-id i etykiety
+            var $newChoiceLabel = $('<label>', {
+                'choice-id': uniqueId,
+                text: `Odpowiedź dla ID: ${uniqueId}`
+            });
+            var $newChoiceInput = $('<input>', {
+                type: 'text',
+                'choice-id': uniqueId,
+            });
+            $parentDiv.append($newChoiceLabel).append($newChoiceInput);
         }
 
         // Sprawdzenie i przełączenie przycisków po dodaniu nowych elementów
@@ -85,6 +101,10 @@
             return id !== idToRemove;
         });
         $parentGlobal.find('input[name="children"]').val(updatedChildrenIds.join(';'));
+
+        // Usunięcie odpowiednich inputów text i etykiet z atrybutem choice-id
+        $parentGlobal.find(`input[type="text"][choice-id="${idToRemove}"]`).remove();
+        $parentGlobal.find(`label[choice-id="${idToRemove}"]`).remove();
 
         // Sprawdzenie i przełączenie przycisków po usunięciu elementu
         checkAndToggleDisable($parentGlobal.find('.create-button'));

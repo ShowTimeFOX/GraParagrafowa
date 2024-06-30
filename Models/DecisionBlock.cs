@@ -2,7 +2,12 @@
 {
     public class DecisionBlock
     {
-        public List<Block> BlockList { get; set; }
-        public int DecisionCount { get; set; }
+        public int Id { get; set; }
+        public int InStoryId { get; set; }
+        public string Description { get; set; }
+        public string ImagePath { get; set; }
+        public List<Choice> Choices { get; set; }
+        
+
     }
 }

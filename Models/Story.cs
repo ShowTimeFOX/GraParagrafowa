@@ -4,6 +4,7 @@
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public List<Block> MyProperty { get; set; }
+        public string ImagePath { get; set; }
+        public List<DecisionBlock> HistoryBlocks { get; set; }
     }
 }

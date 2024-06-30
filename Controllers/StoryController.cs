@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using GraParagrafowa.Models;
+using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
 namespace GraParagrafowa.Controllers
 {
@@ -13,5 +15,8 @@ namespace GraParagrafowa.Controllers
         {
             return View();
         }
+
+
+        
     }
 }

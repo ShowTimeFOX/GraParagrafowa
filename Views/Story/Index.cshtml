@@ -6,9 +6,10 @@
     <link rel="stylesheet" href="~/css/creator.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="~/js/Kreator.js"></script>
+    <script src="~/js/Zapisz.js"></script>
 }
 
-<h1>Kreator</h1>
+<h1>Kreator</h1> <button id="Save">Zapisz</button>
     <div id="zoom-content">
 
         @* <div class="global">
@@ -23,7 +24,8 @@
         <div class="global">
             <div class="parent">
                 <input type="hidden" name="id" value="0" />                
-                opis <input type="type" name="description" value="" />
+                @* opis <input type="type" name="description" value="" /> *@
+                opis <textarea name="description"></textarea>
                 obraz <input type="file" name="imagePath" value="" />
                 <hr />
                 ilosc decyzji
