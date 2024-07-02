@@ -21,16 +21,31 @@ namespace GraParagrafowa.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> HandleFormData([FromBody] List<StoryItem> formData)
+        public async Task<IActionResult> HandleFormData([FromBody] StoryData data)
         {
-            if (formData == null)
+            if (data == null || data.FormData == null)
             {
                 return BadRequest("Invalid data.");
             }
 
+            string storyName = data.StoryName;
+            List<StoryItem> formData = data.FormData;
+            string Photo;
+
+            if (data.Photo != null)
+            {
+                Photo = Convert.ToBase64String(data.Photo);
+            }
+            else
+            {
+                Photo = "";
+            } 
+
+
+
+
             Dictionary<int, Dictionary<int, string>> wybory = new Dictionary<int, Dictionary<int, string>>();
             List<DecisionBlock> blocks = new List<DecisionBlock>();
-
 
             foreach (var item in formData)
             {
@@ -39,7 +54,6 @@ namespace GraParagrafowa.Controllers
                     InStoryId = int.Parse(item.Id),
                     Description = item.Description,
                     ImagePath = item.Image != null ? Convert.ToBase64String(item.Image) : "",
-                    //Choices = new List<Choice>()
                 };
 
                 if (!string.IsNullOrEmpty(item.Responses))
@@ -60,19 +74,19 @@ namespace GraParagrafowa.Controllers
                 blocks.Add(decisionBlock);
                 Debug.WriteLine($"ilość wszystkich bloków: {blocks.Count}");
                 Debug.WriteLine($"Jakiś jego id: {decisionBlock.InStoryId}");
-                //_context.DecisionBlock.Add(decisionBlock);
             }
-            foreach(var block in blocks) //dla każdego bloku
+
+            foreach (var block in blocks)
             {
                 if (block.Choices == null)
                 {
                     block.Choices = new List<Choice>();
                 }
-                if(wybory.ContainsKey(block.InStoryId))
+                if (wybory.ContainsKey(block.InStoryId))
                 {
-                    Dictionary<int, string> choices = wybory[block.InStoryId]; //wyciągam wybory dla danego bloku
+                    Dictionary<int, string> choices = wybory[block.InStoryId];
 
-                    foreach (var choice in choices) //dla każdego wyboru odnajduję odpowiadający mu blok
+                    foreach (var choice in choices)
                     {
                         var blokwyboru = blocks.First(c => c.InStoryId == choice.Key);
                         Debug.WriteLine($"Id bloku: {block.InStoryId}");
@@ -86,18 +100,30 @@ namespace GraParagrafowa.Controllers
                         block.Choices.Add(obiektchoice);
                     }
                 }
-                
             }
+
             foreach (var block in blocks)
             {
                 _context.DecisionBlock.Add(block);
             }
 
 
+
+            // Handle the story name as needed
+            Debug.WriteLine($"Story Name: {storyName}");
+
+            Story story = new Story();
+            story.Name = storyName;
+            story.HistoryBlocks = blocks;
+            story.ImagePath = Photo; //Tymczasowe żeby się to zapisało do bazy
+
+            _context.Story.Add(story);
+
             await _context.SaveChangesAsync();
 
             return Json(new { success = true, message = "Dane odebrane i przetworzone pomyślnie." });
         }
+
 
 
 

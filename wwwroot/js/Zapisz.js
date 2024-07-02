@@ -1,6 +1,27 @@
 ﻿$(document).ready(function () {
     $('#Save').click(function () {
-        var dataToSend = [];
+        var dataToSend = {
+            storyName: $('input[name="Name"]').val(),
+            photo: '',
+            formData: []
+        };
+
+        var photoFile = $('input[name="Photo"]').prop('files')[0];
+        if (photoFile) {
+            var reader = new FileReader();
+            reader.onloadend = function () {
+                dataToSend.photo = reader.result.split(',')[1]; // Zapisz Base64 string
+                gatherFormData(dataToSend);
+            };
+            reader.readAsDataURL(photoFile);
+        } else {
+            gatherFormData(dataToSend);
+        }
+    });
+
+    function gatherFormData(dataToSend) {
+        var totalParents = $('.parent').length;
+        var processedParents = 0;
 
         $('.parent').each(function () {
             var id = $(this).find('input[name="id"]').val();
@@ -9,7 +30,6 @@
             var decisionCount = $(this).find('select[name="decisionCount"]').val();
             var children = $(this).find('input[name="children"]').val();
 
-            // Pobieranie odpowiedzi dla dzieci
             var childResponses = [];
             $(this).find('input[type="text"][choice-id]').each(function () {
                 var childId = $(this).attr('choice-id');
@@ -18,50 +38,48 @@
             });
             var responsesString = childResponses.join('&&$');
 
-            // Utwórz obiekt zawierający dane jednego elementu
             var item = {
                 id: id,
                 description: description,
                 decisionCount: decisionCount,
                 children: children,
-                responses: responsesString
+                responses: responsesString,
+                image: ''
             };
 
-            // Dodaj obraz jako base64 string tylko jeśli został wybrany
             if (imageFile) {
                 var reader = new FileReader();
                 reader.onloadend = function () {
-                    item.image = reader.result.split(',')[1]; // Usuń prefiks "data:image/png;base64,"
-                    dataToSend.push(item);
-                    // Wysłanie danych AJAX-em po zakończeniu wczytywania obrazu
-                    if (dataToSend.length === $('.parent').length) {
+                    item.image = reader.result.split(',')[1];
+                    dataToSend.formData.push(item);
+                    processedParents++;
+                    if (processedParents === totalParents) {
                         sendAjax(dataToSend);
                     }
                 };
                 reader.readAsDataURL(imageFile);
             } else {
-                dataToSend.push(item);
-                // Wysłanie danych AJAX-em jeśli nie ma obrazu
-                if (dataToSend.length === $('.parent').length) {
+                dataToSend.formData.push(item);
+                processedParents++;
+                if (processedParents === totalParents) {
                     sendAjax(dataToSend);
                 }
             }
         });
-    });
+    }
 
     function sendAjax(dataToSend) {
+        
         $.ajax({
-            url: '/DecisionBlocks/HandleFormData',  // URL Twojej akcji w kontrolerze (np. /Story/HandleFormData)
+            url: '/DecisionBlocks/HandleFormData',
             type: 'POST',
             data: JSON.stringify(dataToSend),
             contentType: 'application/json',
             success: function (response) {
-                // Obsłuż sukces
                 console.log('Dane wysłane poprawnie.');
                 console.log('Odpowiedź od serwera:', response);
             },
             error: function (error) {
-                // Obsłuż błędy
                 console.error('Błąd podczas wysyłania danych:', error);
             }
         });
