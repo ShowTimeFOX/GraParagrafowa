@@ -48,7 +48,6 @@
                     <option>3</option>
                     <option>4</option>
                     <option>5</option>
-                    <option>end</option>
                 </select>
                 <input type="hidden" name="children" value="" />
                 <input type="button" value="Stwórz" class="create-button" name="Create" />
@@ -128,90 +127,10 @@
     $('.create-button').each(function () {
         checkAndToggleDisable($(this));
     });
+
+    //przelaczanie bloczkow
+    $('#toggleSize').click(function () {
+        $('.parent').toggleClass('small');
+    });
 });
 
-///////////////////////////////
-
-//function saveElements() {
-//    var elements = [];
-
-//    $('.global').each(function () {
-//        var $parent = $(this).find('.parent');
-//        var id = $parent.find('input[name="id"]').val();
-//        var description = $parent.find('input[name="description"]').val();
-//        var imagePath = $parent.find('input[name="imagePath"]').val();
-//        var decisionCount = $parent.find('select[name="decisionCount"]').val();
-//        var children = $parent.find('input[name="children"]').val();
-
-//        var element = {
-//            id: id,
-//            description: description,
-//            imagePath: imagePath,
-//            decisionCount: decisionCount,
-//            children: children
-//        };
-
-//        elements.push(element);
-//    });
-
-//    // Przygotowanie danych do wysłania
-//    var postData = {
-//        elements: elements
-//    };
-
-//    // Wysłanie danych do kontrolera za pomocą AJAX
-//    $.ajax({
-//        type: 'POST',
-//        url: '/Story/Save', // Zmienić na odpowiedni adres URL kontrolera
-//        data: JSON.stringify(postData),
-//        contentType: 'application/json',
-//        success: function (response) {
-//            // Obsługa sukcesu, jeśli potrzebna
-//            console.log('Zapisano elementy do bazy danych.');
-//        },
-//        error: function (xhr, status, error) {
-//            // Obsługa błędu, jeśli potrzebna
-//            console.error('Wystąpił błąd podczas zapisywania elementów: ' + error);
-//        }
-//    });
-//}
-//});
-//</script >
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //document.addEventListener('DOMContentLoaded', function () {
-    //    var zoomContainer = document.getElementById('zoom-container');
-    //var zoomContent = document.getElementById('zoom-content');
-    //var scale = 1;
-    //var scaleStep = 0.1;
-    //var minScale = 0.5;
-    //var maxScale = 5;
-
-    //zoomContainer.addEventListener('wheel', function (event) {
-    //    event.preventDefault();
-
-    //if (event.deltaY < 0) {
-    //    // Zoom in
-    //    scale = Math.min(maxScale, scale + scaleStep);
-    //        } else {
-    //    // Zoom out
-    //    scale = Math.max(minScale, scale - scaleStep);
-    //        }
-
-    //zoomContent.style.transform = 'scale(' + scale + ')';
-    //    });
-//});

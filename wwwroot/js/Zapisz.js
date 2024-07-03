@@ -78,9 +78,15 @@
             success: function (response) {
                 console.log('Dane wysłane poprawnie.');
                 console.log('Odpowiedź od serwera:', response);
+                // Wyświetl komunikat o sukcesie przez 5 sekund
+                $('#successMessage').fadeIn().delay(5000).fadeOut();
+                $('#errorMessage').hide();
             },
             error: function (error) {
                 console.error('Błąd podczas wysyłania danych:', error);
+                // Wyświetl komunikat o błędzie przez 5 sekund
+                $('#errorMessage').fadeIn().delay(5000).fadeOut();
+                $('#successMessage').hide();
             }
         });
     }

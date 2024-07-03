@@ -17,54 +17,70 @@
     height: 100%;
 }
 
-/*#zoom-container {
-    padding: 15px;
-    width: 100%;
-    height: 600px;*/ /* Ustawienie konkretnej wysokości dla kontenera */
-/*overflow: auto;*/ /* Dodanie pasków przewijania, gdy zawartość jest większa niż kontener */
-/*position: relative;*/
-/*border: 1px solid #ccc;*/ /* Opcjonalnie: Dodanie obramowania dla lepszej widoczności */
-/*display: flex;
-    align-items: center;*/ /* Wyśrodkowanie pionowe */
-/*justify-content: flex-start;*/ /* Wyrównanie do lewej */
-/*}
-
-#zoom-content {
-    margin-top: 15px;
-    padding:15px;
-    position: relative;*/ /* Zmieniono na relative, aby działało z flexbox */
-/*transform-origin: 0 0;
-    display: flex;
-    align-items: center;*/ /* Wyśrodkowanie pionowe */
-/*justify-content: flex-start;*/ /* Wyrównanie do lewej */
-/*}*/
-
 .global {
     display: flex;
-    background: green;
+    
 }
 
 .parent {
     display: flex;
-    align-self:center;
+    align-self: center;
     flex-direction: column;
     background: red;
-    margin-right:10px;
+    margin-right: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px;
+    transition: all .2s;
 }
+
+    .parent.small {
+        width: 50px;
+        height: 50px;
+        overflow: hidden;
+        transition: all 0.2s;
+    }
+
+        .parent.small * {
+            visibility: hidden; /* Ukryj wszystkie dzieci, gdy element jest mały */
+        }
+
+        .parent.small ~ .children {
+            margin: 5px 0; /* Zmniejsz marginesy dla children, gdy parent jest mały */
+        }
 
 .children {
     display: flex;
     flex-direction: column;
-    background: orange;
+    /*background: orange;*/
     margin: 40px 0;
 }
 
 #zoom-content {
     border: 1px solid black;
-    width: 100%;
+    width: calc(100% - 20px);
     height: 500px;
     overflow: scroll;
-    background: green;
+    background-color: #7dffb8;
+    position: fixed;
 }
 
+.container {
+    margin: 0;
+    padding: 0 10px;
+}
 
+.global .parent:hover {
+    background-color: blueviolet;
+    transition: all .3s;
+}
+
+    .global .parent:hover ~ .children .parent {
+        background-color: blueviolet;
+        transition: all .5s;
+    }
+
+#creator-header{
+    display:flex;
+    justify-content:space-between
+}

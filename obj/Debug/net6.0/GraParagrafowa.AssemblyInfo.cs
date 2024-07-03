@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GraParagrafowa")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bf43d8cf7d0d19e736c2e8d1ae85d7e8577e9dab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+421d00078a48dee3bc88b0df9329e265253312b5")]
 [assembly: System.Reflection.AssemblyProductAttribute("GraParagrafowa")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GraParagrafowa")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
