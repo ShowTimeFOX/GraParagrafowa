@@ -1,0 +1,44 @@
+﻿@model GraParagrafowa.Models.Story
+
+@{
+    ViewData["Title"] = "Odtwarzacz";
+}
+
+@section head {
+    <link rel="stylesheet" href="~/css/player.css" />
+    <script src="~/js/Player.js"></script>
+}
+
+
+<h2 style="display:inline;">Odtwarzacz</h2>
+<div id="controls">
+    <img src="~/images/play-button.png" alt="Play" id="playButton" />
+    <img src="~/images/stop-button.png" alt="Stop" id="stopButton" />
+    <h3 id="storyTitle" style="display:inline;">@Model.Name</h3>
+</div>
+<div id="main">
+    <div id="storyContainer">        
+        <div id="blockDescription"></div>
+        <div id="choicesContainer"></div>
+    </div>
+</div>
+
+@* @foreach (var item in @Model.HistoryBlocks)
+{
+    foreach (var item2 in @item.Choices){
+        @item2.Text
+    }
+} *@
+
+
+<script>
+    // Definicja danych modelu w formacie JSON
+    var story = @Html.Raw(Json.Serialize(Model));
+    //console.log("Story: ", story);
+
+
+    // Inicjalizacja odtwarzacza po załadowaniu strony
+    $(document).ready(function () {
+        initializePlayer(story);
+    });
+</script>

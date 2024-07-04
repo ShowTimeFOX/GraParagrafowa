@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using GraParagrafowa.Data;
+﻿using GraParagrafowa.Data;
 using GraParagrafowa.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace GraParagrafowa.Controllers
 {
@@ -22,9 +17,9 @@ namespace GraParagrafowa.Controllers
         // GET: Choices
         public async Task<IActionResult> Index()
         {
-              return _context.Choice != null ? 
-                          View(await _context.Choice.ToListAsync()) :
-                          Problem("Entity set 'GraParagrafowaContext.Choice'  is null.");
+            return _context.Choice != null ?
+                        View(await _context.Choice.ToListAsync()) :
+                        Problem("Entity set 'GraParagrafowaContext.Choice'  is null.");
         }
 
         // GET: Choices/Details/5
@@ -150,14 +145,14 @@ namespace GraParagrafowa.Controllers
             {
                 _context.Choice.Remove(choice);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ChoiceExists(int id)
         {
-          return (_context.Choice?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Choice?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

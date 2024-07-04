@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using GraParagrafowa.Models;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace GraParagrafowa.Data
 {
     public class GraParagrafowaContext : DbContext
     {
-        public GraParagrafowaContext (DbContextOptions<GraParagrafowaContext> options)
+        public GraParagrafowaContext(DbContextOptions<GraParagrafowaContext> options)
             : base(options)
         {
         }

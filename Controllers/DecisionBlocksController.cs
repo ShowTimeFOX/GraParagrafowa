@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using GraParagrafowa.Data;
+﻿using GraParagrafowa.Data;
 using GraParagrafowa.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace GraParagrafowa.Controllers
@@ -39,13 +34,14 @@ namespace GraParagrafowa.Controllers
             else
             {
                 Photo = "";
-            } 
+            }
 
 
 
 
             Dictionary<int, Dictionary<int, string>> wybory = new Dictionary<int, Dictionary<int, string>>();
             List<DecisionBlock> blocks = new List<DecisionBlock>();
+            List<Choice> listawyborow = new List<Choice>();
 
             foreach (var item in formData)
             {
@@ -78,10 +74,7 @@ namespace GraParagrafowa.Controllers
 
             foreach (var block in blocks)
             {
-                if (block.Choices == null)
-                {
-                    block.Choices = new List<Choice>();
-                }
+                
                 if (wybory.ContainsKey(block.InStoryId))
                 {
                     Dictionary<int, string> choices = wybory[block.InStoryId];
@@ -95,17 +88,38 @@ namespace GraParagrafowa.Controllers
                         Choice obiektchoice = new Choice
                         {
                             Text = choice.Value,
-                            OutcomeBlock = blokwyboru
+                            OutcomeBlock = blokwyboru,
+                            SourceBlock = block,
+                            
                         };
-                        block.Choices.Add(obiektchoice);
+                        _context.Add( obiektchoice );
+                        listawyborow.Add( obiektchoice );
                     }
                 }
             }
 
             foreach (var block in blocks)
             {
+                //Debug.WriteLine($"Id bloku: {block.InStoryId}");
+
+                //foreach(var choice in block.Choices)
+                //{
+                //    Debug.WriteLine($"Id dziecka: {choice.OutcomeBlock.InStoryId}");
+                //}
+
                 _context.DecisionBlock.Add(block);
+                //Debug.WriteLine($"________________________________________________");
+
+
+                //Debug.WriteLine($"Id bloku po zapisie: {block.InStoryId}");
+
+                //foreach (var choice in block.Choices)
+                //{
+                //    Debug.WriteLine($"Id dziecka po zapisie: {choice.OutcomeBlock.InStoryId}");
+                //}
             }
+            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
 
 
@@ -119,6 +133,77 @@ namespace GraParagrafowa.Controllers
 
             _context.Story.Add(story);
 
+            await _context.SaveChangesAsync();
+
+
+            List<Choice> listategogowna = new List<Choice>(); //lista wszystkich wyborów w historii
+
+
+            Story story_for_id = _context.Story.Find(story.Id);
+
+
+            foreach(var wybor in listawyborow)
+            {
+                wybor.storryID = story.Id;
+            }
+
+            Debug.WriteLine($"Story Name: {story_for_id.Id}");
+
+            List<DecisionBlock> listablokowhistori = new List<DecisionBlock>();
+
+            listablokowhistori = story_for_id.HistoryBlocks.ToList();
+
+            //foreach (var blok in listablokowhistori)
+            //{
+            //    if (blok.Choices == null)
+            //    {
+            //        blok.Choices = new List<Choice>();
+            //    }
+            //    if (wybory.ContainsKey(blok.InStoryId))
+            //    {
+            //        Dictionary<int, string> choices = wybory[blok.InStoryId];
+
+            //        foreach (var choice in choices)
+            //        {
+            //            var blokwyboru = listablokowhistori.First(c => c.InStoryId == choice.Key);
+            //            Debug.WriteLine($"Id bloku: {blok.InStoryId}");
+            //            Debug.WriteLine($"Id dziecka: {choice.Key}");
+
+            //            Choice obiektchoice = new Choice
+            //            {
+            //                Text = choice.Value,
+            //                OutcomeBlock = blokwyboru
+            //            };
+            //            _context.Choice.Add(obiektchoice);
+
+            //            Debug.WriteLine($"CHUJ>>>>>>>>");
+            //            Debug.WriteLine($"{obiektchoice.OutcomeBlock.InStoryId}");
+
+            //            listategogowna.Add( obiektchoice );
+
+            //        }
+            //    }
+                
+            //}
+            //_context.SaveChanges();
+            //await _context.SaveChangesAsync();
+
+            //foreach(var blok in listablokowhistori)
+            //{
+            //    if (wybory.ContainsKey(blok.InStoryId))
+            //    {
+            //        Dictionary<int, string> choices = wybory[blok.InStoryId]; //instoryid bloku outcome i text
+
+            //        foreach (var choice in choices)
+            //        {
+            //            Choice wybor = listategogowna.Find(c => c.OutcomeBlock.InStoryId == choice.Key);
+
+            //            blok.Choices.Add(wybor);
+            //        }
+            //    }
+                
+            //}
+            _context.SaveChanges();
             await _context.SaveChangesAsync();
 
             return Json(new { success = true, message = "Dane odebrane i przetworzone pomyślnie." });
@@ -138,9 +223,9 @@ namespace GraParagrafowa.Controllers
         // GET: DecisionBlocks
         public async Task<IActionResult> Index()
         {
-              return _context.DecisionBlock != null ? 
-                          View(await _context.DecisionBlock.ToListAsync()) :
-                          Problem("Entity set 'GraParagrafowaContext.DecisionBlock'  is null.");
+            return _context.DecisionBlock != null ?
+                        View(await _context.DecisionBlock.ToListAsync()) :
+                        Problem("Entity set 'GraParagrafowaContext.DecisionBlock'  is null.");
         }
 
         // GET: DecisionBlocks/Details/5
@@ -266,14 +351,14 @@ namespace GraParagrafowa.Controllers
             {
                 _context.DecisionBlock.Remove(decisionBlock);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool DecisionBlockExists(int id)
         {
-          return (_context.DecisionBlock?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.DecisionBlock?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

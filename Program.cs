@@ -1,6 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using GraParagrafowa.Data;
+﻿using GraParagrafowa.Data;
+using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 namespace GraParagrafowa
 {
     public class Program
@@ -10,6 +10,13 @@ namespace GraParagrafowa
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddDbContext<GraParagrafowaContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("GraParagrafowaContext") ?? throw new InvalidOperationException("Connection string 'GraParagrafowaContext' not found.")));
+
+            // Dodanie kontrolerów z widokami oraz konfiguracja JSON
+            builder.Services.AddControllersWithViews()
+                .AddJsonOptions(options =>
+                {
+                    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+                });
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
@@ -37,5 +44,6 @@ namespace GraParagrafowa
 
             app.Run();
         }
+
     }
 }

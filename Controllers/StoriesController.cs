@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using GraParagrafowa.Data;
+﻿using GraParagrafowa.Data;
 using GraParagrafowa.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 
 namespace GraParagrafowa.Controllers
 {
@@ -20,7 +16,51 @@ namespace GraParagrafowa.Controllers
         }
 
 
-        
+
+
+
+        //[HttpGet]
+        //public async Task<IActionResult> Player(int id)
+        //{
+        //    var story = await _context.Story
+        //                              .Include(s => s.HistoryBlocks)
+        //                              .ThenInclude(b => b.Choices)
+        //                              .FirstOrDefaultAsync(s => s.Id == id);
+
+        //    if (story == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    Debug.WriteLine("ok");
+
+        //    return View(story);
+        //}
+
+        //[HttpGet]
+        //public async Task<IActionResult> UpdatePage()
+        //{
+
+        //    List<Story> allstories = new List<Story>();
+
+        //    foreach(var story in _context.Story)
+        //    {
+        //        allstories.Add(story);
+        //    }
+        //    var stories = await _context.Story
+        //                              .Include(s => s.Name)
+        //                              .ThenInclude(b => b.Choices)
+        //                              .FirstOrDefaultAsync(s => s.Id == id);
+
+        //    if (story == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    Debug.WriteLine("ok");
+
+        //    return View(story);
+        //}
 
 
 
@@ -30,9 +70,9 @@ namespace GraParagrafowa.Controllers
         // GET: Stories
         public async Task<IActionResult> Index()
         {
-              return _context.Story != null ? 
-                          View(await _context.Story.ToListAsync()) :
-                          Problem("Entity set 'GraParagrafowaContext.Story'  is null.");
+            return _context.Story != null ?
+                        View(await _context.Story.ToListAsync()) :
+                        Problem("Entity set 'GraParagrafowaContext.Story'  is null.");
         }
 
         // GET: Stories/Details/5
@@ -158,14 +198,14 @@ namespace GraParagrafowa.Controllers
             {
                 _context.Story.Remove(story);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool StoryExists(int id)
         {
-          return (_context.Story?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Story?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

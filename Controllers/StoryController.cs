@@ -1,11 +1,11 @@
-﻿using GraParagrafowa.Models;
-using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+﻿using Microsoft.AspNetCore.Mvc;
+
 
 namespace GraParagrafowa.Controllers
 {
     public class StoryController : Controller
     {
+
         public IActionResult Index()
         {
             return View();
@@ -17,6 +17,7 @@ namespace GraParagrafowa.Controllers
         }
 
 
-        
+
+
     }
 }

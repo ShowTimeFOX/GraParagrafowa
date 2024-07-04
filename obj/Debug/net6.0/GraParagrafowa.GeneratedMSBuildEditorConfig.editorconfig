@@ -9,107 +9,107 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GraParagrafowa
 build_property.RootNamespace = GraParagrafowa
-build_property.ProjectDir = C:\Users\barte\Desktop\ShowTime\Studia\semestr06\PZ\GraParagrafowa\
+build_property.ProjectDir = C:\Users\User\Documents\GitHub\GraParagrafowa\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\barte\Desktop\ShowTime\Studia\semestr06\PZ\GraParagrafowa
+build_property.MSBuildProjectDirectory = C:\Users\User\Documents\GitHub\GraParagrafowa
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/barte/Desktop/ShowTime/Studia/semestr06/PZ/GraParagrafowa/Views/Choices/Create.cshtml]
+[C:/Users/User/Documents/GitHub/GraParagrafowa/Views/Choices/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hvaWNlc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barte/Desktop/ShowTime/Studia/semestr06/PZ/GraParagrafowa/Views/Choices/Delete.cshtml]
+[C:/Users/User/Documents/GitHub/GraParagrafowa/Views/Choices/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hvaWNlc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barte/Desktop/ShowTime/Studia/semestr06/PZ/GraParagrafowa/Views/Choices/Details.cshtml]
+[C:/Users/User/Documents/GitHub/GraParagrafowa/Views/Choices/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hvaWNlc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barte/Desktop/ShowTime/Studia/semestr06/PZ/GraParagrafowa/Views/Choices/Edit.cshtml]
+[C:/Users/User/Documents/GitHub/GraParagrafowa/Views/Choices/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hvaWNlc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barte/Desktop/ShowTime/Studia/semestr06/PZ/GraParagrafowa/Views/Choices/Index.cshtml]
+[C:/Users/User/Documents/GitHub/GraParagrafowa/Views/Choices/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hvaWNlc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barte/Desktop/ShowTime/Studia/semestr06/PZ/GraParagrafowa/Views/DecisionBlocks/Create.cshtml]
+[C:/Users/User/Documents/GitHub/GraParagrafowa/Views/DecisionBlocks/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVjaXNpb25CbG9ja3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barte/Desktop/ShowTime/Studia/semestr06/PZ/GraParagrafowa/Views/DecisionBlocks/Delete.cshtml]
+[C:/Users/User/Documents/GitHub/GraParagrafowa/Views/DecisionBlocks/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVjaXNpb25CbG9ja3NcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barte/Desktop/ShowTime/Studia/semestr06/PZ/GraParagrafowa/Views/DecisionBlocks/Details.cshtml]
+[C:/Users/User/Documents/GitHub/GraParagrafowa/Views/DecisionBlocks/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVjaXNpb25CbG9ja3NcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barte/Desktop/ShowTime/Studia/semestr06/PZ/GraParagrafowa/Views/DecisionBlocks/Edit.cshtml]
+[C:/Users/User/Documents/GitHub/GraParagrafowa/Views/DecisionBlocks/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVjaXNpb25CbG9ja3NcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barte/Desktop/ShowTime/Studia/semestr06/PZ/GraParagrafowa/Views/DecisionBlocks/Index.cshtml]
+[C:/Users/User/Documents/GitHub/GraParagrafowa/Views/DecisionBlocks/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVjaXNpb25CbG9ja3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barte/Desktop/ShowTime/Studia/semestr06/PZ/GraParagrafowa/Views/Home/Index.cshtml]
+[C:/Users/User/Documents/GitHub/GraParagrafowa/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barte/Desktop/ShowTime/Studia/semestr06/PZ/GraParagrafowa/Views/Home/Privacy.cshtml]
+[C:/Users/User/Documents/GitHub/GraParagrafowa/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barte/Desktop/ShowTime/Studia/semestr06/PZ/GraParagrafowa/Views/Shared/Error.cshtml]
+[C:/Users/User/Documents/GitHub/GraParagrafowa/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barte/Desktop/ShowTime/Studia/semestr06/PZ/GraParagrafowa/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/User/Documents/GitHub/GraParagrafowa/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barte/Desktop/ShowTime/Studia/semestr06/PZ/GraParagrafowa/Views/Stories/Create.cshtml]
+[C:/Users/User/Documents/GitHub/GraParagrafowa/Views/Stories/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Rvcmllc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barte/Desktop/ShowTime/Studia/semestr06/PZ/GraParagrafowa/Views/Stories/Delete.cshtml]
+[C:/Users/User/Documents/GitHub/GraParagrafowa/Views/Stories/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Rvcmllc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barte/Desktop/ShowTime/Studia/semestr06/PZ/GraParagrafowa/Views/Stories/Details.cshtml]
+[C:/Users/User/Documents/GitHub/GraParagrafowa/Views/Stories/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Rvcmllc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barte/Desktop/ShowTime/Studia/semestr06/PZ/GraParagrafowa/Views/Stories/Edit.cshtml]
+[C:/Users/User/Documents/GitHub/GraParagrafowa/Views/Stories/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Rvcmllc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barte/Desktop/ShowTime/Studia/semestr06/PZ/GraParagrafowa/Views/Stories/Index.cshtml]
+[C:/Users/User/Documents/GitHub/GraParagrafowa/Views/Stories/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Rvcmllc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barte/Desktop/ShowTime/Studia/semestr06/PZ/GraParagrafowa/Views/Story/Index.cshtml]
+[C:/Users/User/Documents/GitHub/GraParagrafowa/Views/Stories/Player.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Rvcmllc1xQbGF5ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Documents/GitHub/GraParagrafowa/Views/Story/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barte/Desktop/ShowTime/Studia/semestr06/PZ/GraParagrafowa/Views/Story/Player.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcnlcUGxheWVyLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/barte/Desktop/ShowTime/Studia/semestr06/PZ/GraParagrafowa/Views/_ViewImports.cshtml]
+[C:/Users/User/Documents/GitHub/GraParagrafowa/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barte/Desktop/ShowTime/Studia/semestr06/PZ/GraParagrafowa/Views/_ViewStart.cshtml]
+[C:/Users/User/Documents/GitHub/GraParagrafowa/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barte/Desktop/ShowTime/Studia/semestr06/PZ/GraParagrafowa/Views/Shared/_Layout.cshtml]
+[C:/Users/User/Documents/GitHub/GraParagrafowa/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-p3w0ak79oo

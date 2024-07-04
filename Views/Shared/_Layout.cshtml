@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/GraParagrafowa.styles.css" asp-append-version="true" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     @RenderSection("head", required: false)
 </head>
 <body>
@@ -24,7 +25,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Story" asp-action="Index">Kreator</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Story" asp-action="Player">Odtwarzacz</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Stories" asp-action="Index">Odtwarzacz</a>
                         </li>
                     </ul>
                 </div>

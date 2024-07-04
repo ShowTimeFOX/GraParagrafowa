@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\js\Player.js" />
     <Content Remove="wwwroot\js\Zapisz.js" />
   </ItemGroup>
 
@@ -16,6 +17,7 @@
 
   <ItemGroup>
     <None Include="wwwroot\images\play_button.png" />
+    <None Include="wwwroot\js\Player.js" />
     <None Include="wwwroot\js\Zapisz.js" />
   </ItemGroup>
 
