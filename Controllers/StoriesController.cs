@@ -1,7 +1,12 @@
-﻿using GraParagrafowa.Data;
-using GraParagrafowa.Models;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using GraParagrafowa.Data;
+using GraParagrafowa.Models;
 using System.Diagnostics;
 
 namespace GraParagrafowa.Controllers
@@ -15,64 +20,49 @@ namespace GraParagrafowa.Controllers
             _context = context;
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Player(int id)
+        {
+            var aaaaaa = await _context.Story
+                                       .Include(s => s.HistoryBlocks) // Eagerly load HistoryBlocks
+                                       .FirstOrDefaultAsync(s => s.Id == id);
 
+            var choiceschuj = await _context.Choice
+                                .Where(c => c.storryID == id)
+                                .ToListAsync();
 
+            var dto = new GameDTO
+            {
+                story = aaaaaa,
+                choice_list = choiceschuj
+            };
 
+            if (aaaaaa == null)
+            {
+                return NotFound();
+            }
 
-        //[HttpGet]
-        //public async Task<IActionResult> Player(int id)
-        //{
-        //    var story = await _context.Story
-        //                              .Include(s => s.HistoryBlocks)
-        //                              .ThenInclude(b => b.Choices)
-        //                              .FirstOrDefaultAsync(s => s.Id == id);
+            
 
-        //    if (story == null)
-        //    {
-        //        return NotFound();
-        //    }
+            var l = new List<DecisionBlock>();
+            foreach (var item in aaaaaa.HistoryBlocks)
+            {
+                l.Add(item);
+                Debug.WriteLine($"{item.Id}");
+                Debug.WriteLine("KURWOOOOOOOOOOOOOOOOOOOOOO");
+            }
 
-        //    Debug.WriteLine("ok");
+            Debug.WriteLine("ok");
 
-        //    return View(story);
-        //}
-
-        //[HttpGet]
-        //public async Task<IActionResult> UpdatePage()
-        //{
-
-        //    List<Story> allstories = new List<Story>();
-
-        //    foreach(var story in _context.Story)
-        //    {
-        //        allstories.Add(story);
-        //    }
-        //    var stories = await _context.Story
-        //                              .Include(s => s.Name)
-        //                              .ThenInclude(b => b.Choices)
-        //                              .FirstOrDefaultAsync(s => s.Id == id);
-
-        //    if (story == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    Debug.WriteLine("ok");
-
-        //    return View(story);
-        //}
-
-
-
-
-
+            return View(dto);
+        }
 
         // GET: Stories
         public async Task<IActionResult> Index()
         {
-            return _context.Story != null ?
-                        View(await _context.Story.ToListAsync()) :
-                        Problem("Entity set 'GraParagrafowaContext.Story'  is null.");
+              return _context.Story != null ? 
+                          View(await _context.Story.ToListAsync()) :
+                          Problem("Entity set 'GraParagrafowaContext.Story'  is null.");
         }
 
         // GET: Stories/Details/5
@@ -118,17 +108,26 @@ namespace GraParagrafowa.Controllers
         // GET: Stories/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Story == null)
+            var aaaaaa = await _context.Story
+                                       .Include(s => s.HistoryBlocks) // Eagerly load HistoryBlocks
+                                       .FirstOrDefaultAsync(s => s.Id == id);
+
+            var choiceschuj = await _context.Choice
+                                .Where(c => c.storryID == id)
+                                .ToListAsync();
+
+            var dto = new GameDTO
             {
-                return NotFound();
-            }
+                story = aaaaaa,
+                choice_list = choiceschuj
+            };
 
             var story = await _context.Story.FindAsync(id);
             if (story == null)
             {
                 return NotFound();
             }
-            return View(story);
+            return View(dto);
         }
 
         // POST: Stories/Edit/5
@@ -198,14 +197,14 @@ namespace GraParagrafowa.Controllers
             {
                 _context.Story.Remove(story);
             }
-
+            
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool StoryExists(int id)
         {
-            return (_context.Story?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Story?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

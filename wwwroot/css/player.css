@@ -1,14 +1,15 @@
 ﻿img{
     width: 50px;
+    margin:5px 0;
 }
 
 img:hover{
-    background: lightgray;
     cursor:pointer;
+    filter:brightness(1.2);
 }
 
 #controls {
-    margin: 10px;
+    /*margin: 10px;*/
     display: inline;
 }
 
@@ -22,15 +23,38 @@ img:hover{
         height: 100%;
     }
 
-#storyContainer{
-    height:500px;
-    background-size: cover;
-    
+#blockDescription, #choicesContainer {
+    background-color: rgba(255, 255, 255, 0.7); /* Półprzezroczyste białe tło */
+    border: 1px solid #000; /* Czarna ramka */
+    padding: 20px; /* Wewnętrzny margines */
+    margin-bottom: 10px; /* Dolny margines */
+    max-width: 80%; /* Maksymalna szerokość kontenerów */
+    margin: 0 auto; /* Automatyczne wyśrodkowanie */
 }
 
-#blockDescription, #choicesContainer {
-    background-color: white;
-    min-height:20px;
-    border: 1px solid black;
-    color:black;
+#storyContainer {
+    height: 500px;
+    background-size: cover;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#choicesContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+#choicesContainer button{
+    margin: 5px 10px;
+}
+
+#main-header{
+    display:flex;
+    justify-content:space-between;
+}
+
+#blockDescription {
+    font-weight: bold;
+    font-size: 120%;
 }

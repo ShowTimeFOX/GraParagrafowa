@@ -1,39 +1,76 @@
-﻿@model GraParagrafowa.Models.Story
+﻿@using Newtonsoft.Json
+@model GraParagrafowa.Models.GameDTO
 
 @{
     ViewData["Title"] = "Edit";
 }
-
-<h1>Edit</h1>
-
-<h4>Story</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ImagePath" class="control-label"></label>
-                <input asp-for="ImagePath" class="form-control" />
-                <span asp-validation-for="ImagePath" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+@section head {
+    <link rel="stylesheet" href="~/css/creator.css" />
+    <script src="~/js/Kreator.js"></script>
+    <script src="~/js/Zapisz.js"></script>
+    <script src="~/js/update.js"></script>
+}
+<div id="creator-header">
+    <div>
+        <h1 style="display:inline-block">Kreator</h1>
+        Nazwa Historii:
+        <input type="text" name="Name" value="@Model.story.Name" />
+        <input type="file" name="Photo"></input>
+    </div>
+    <div style="width:300px">
+        <button id="Save">Zapisz</button>
+        <button id="toggleSize">Zmień rozmiar</button><br />
+        <span id="successMessage" style="display: none; color: green;">Dane zapisane poprawnie.</span>
+        <span id="errorMessage" style="display: none; color: red;">Błąd podczas zapisywania danych.</span>
     </div>
 </div>
+<div id="zoom-content">
 
-<div>
-    <a asp-action="Index">Back to List</a>
+    @* <div class="global">
+    <div class="parent">
+
+    </div>
+    <div class="children">
+
+    </div>
+    </div> *@
+
+    <div class="global">
+        <div class="parent">
+            <input type="hidden" name="id" value="0" />
+            @* opis <input type="type" name="description" value="" /> *@
+            opis <textarea name="description">@Model.story.HistoryBlocks[0].Description</textarea>
+            obraz <input type="file" name="imagePath" value="" />
+            <hr />
+            ilosc decyzji
+            <select name="decisionCount">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+            <input type="hidden" name="children" value="" />
+            <input type="button" value="Stwórz" class="create-button" name="Create" value="" />
+            @* <input type="button" value="Usuń" class="delete-button" name="Delete" value="" /> *@
+        </div>
+        <div class="children">
+        </div>
+    </div>
 </div>
+<script>
+    // Definicja danych modelu w formacie JSON
+    var gameData = @Html.Raw(JsonConvert.SerializeObject(Model));
+    console.log(gameData);
+    //console.log("DTO: ", dto)
+    //console.log("name: ", story.Name);
+    
 
+    //Inicjalizacja odtwarzacza po załadowaniu strony
+    $(document).ready(function () {
+        initializeUpdater(gameData);
+    });
+</script>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

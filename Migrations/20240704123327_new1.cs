@@ -4,7 +4,7 @@
 
 namespace GraParagrafowa.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class new1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -50,7 +50,9 @@ namespace GraParagrafowa.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     OutcomeBlockId = table.Column<int>(type: "int", nullable: false),
-                    Text = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    SourceBlockId = table.Column<int>(type: "int", nullable: false),
+                    Text = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    storryID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -60,13 +62,24 @@ namespace GraParagrafowa.Migrations
                         column: x => x.OutcomeBlockId,
                         principalTable: "DecisionBlock",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
+                    table.ForeignKey(
+                        name: "FK_Choice_DecisionBlock_SourceBlockId",
+                        column: x => x.SourceBlockId,
+                        principalTable: "DecisionBlock",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Choice_OutcomeBlockId",
                 table: "Choice",
                 column: "OutcomeBlockId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Choice_SourceBlockId",
+                table: "Choice",
+                column: "SourceBlockId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_DecisionBlock_StoryId",

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GraParagrafowa.Migrations
 {
     [DbContext(typeof(GraParagrafowaContext))]
-    [Migration("20240704104823_essa")]
-    partial class essa
+    [Migration("20240704123327_new1")]
+    partial class new1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -41,6 +41,9 @@ namespace GraParagrafowa.Migrations
                     b.Property<string>("Text")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("storryID")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

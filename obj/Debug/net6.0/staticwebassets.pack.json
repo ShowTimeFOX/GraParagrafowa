@@ -77,6 +77,10 @@
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\wwwroot\\js\\update.js",
+      "PackagePath": "staticwebassets\\js\\update.js"
+    },
+    {
       "Id": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },

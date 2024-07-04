@@ -1,4 +1,5 @@
-﻿@model GraParagrafowa.Models.Story
+﻿@using Newtonsoft.Json
+@model GraParagrafowa.Models.GameDTO
 
 @{
     ViewData["Title"] = "Odtwarzacz";
@@ -9,16 +10,22 @@
     <script src="~/js/Player.js"></script>
 }
 
-
-<h2 style="display:inline;">Odtwarzacz</h2>
-<div id="controls">
-    <img src="~/images/play-button.png" alt="Play" id="playButton" />
-    <img src="~/images/stop-button.png" alt="Stop" id="stopButton" />
-    <h3 id="storyTitle" style="display:inline;">@Model.Name</h3>
+<div id="main-header">
+    <div>
+        <h2 style="display:inline;">Odtwarzacz |</h2>
+        <h3 id="storyTitle" style="display:inline;">Nazwa historii: @Model.story.Name</h3>
+    </div>
+    <div id="controls">
+        <img src="~/images/play-button.png" alt="Play" id="playButton" title="Play" />
+        <img src="~/images/stop-button.png" alt="Stop" id="stopButton" title="Stop" />
+    
+    </div>
 </div>
 <div id="main">
-    <div id="storyContainer">        
-        <div id="blockDescription"></div>
+    <div id="storyContainer">
+        <div id="blockDescription">
+            <b><i>Naciśnij "Play" aby rozpocząć...</i></b>
+        </div>
         <div id="choicesContainer"></div>
     </div>
 </div>
@@ -30,15 +37,21 @@
     }
 } *@
 
+@* @foreach(var item in @Model.choice_list)
+{
+    @item.SourceBlock
+} *@
 
 <script>
     // Definicja danych modelu w formacie JSON
-    var story = @Html.Raw(Json.Serialize(Model));
-    //console.log("Story: ", story);
+    var gameData = @Html.Raw(JsonConvert.SerializeObject(Model));
+    console.log(gameData);
+    //console.log("DTO: ", dto)
+    //console.log("name: ", story.Name);
 
 
-    // Inicjalizacja odtwarzacza po załadowaniu strony
+    //Inicjalizacja odtwarzacza po załadowaniu strony
     $(document).ready(function () {
-        initializePlayer(story);
+        initializePlayer(gameData);
     });
 </script>

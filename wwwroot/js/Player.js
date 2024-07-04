@@ -1,19 +1,26 @@
 ﻿// Funkcja initializePlayer
-function initializePlayer(story) {
+function initializePlayer(gameData) {
     const playButton = $('#playButton');
     const stopButton = $('#stopButton');
-
-    console.log("JS Story", story);
     const storyContainer = $('#storyContainer');
 
     // Ustawienie tła kontenera na podstawie imagePath
-    storyContainer.css('background-image', 'url("data:image/png;base64,' + story.imagePath + '")');
+    storyContainer.css('background-image', 'url("data:image/png;base64,' + gameData.story.ImagePath + '")');
 
     playButton.click(function () {
         console.log('start'); // Wypisanie "start" na konsoli
 
-        if (story.historyBlocks && story.historyBlocks.$values.length > 0) {
-            displayBlock(story.historyBlocks.$values[0], story.historyBlocks.$values);
+        // Sprawdzenie czy istnieją historyBlocks
+        if (gameData.story.HistoryBlocks && gameData.story.HistoryBlocks.length > 0) {
+            // Znalezienie pierwszego bloku, gdzie InStoryId == 0
+            var initialBlock = gameData.story.HistoryBlocks.find(function (block) {
+                return block.InStoryId === 0;
+            });
+
+            if (initialBlock) {
+                // Rozpoczęcie od pierwszego znalezionego bloku
+                displayBlock(initialBlock, gameData.story.HistoryBlocks, gameData.choice_list, storyContainer);
+            }
         }
     });
 
@@ -23,31 +30,35 @@ function initializePlayer(story) {
 }
 
 // Funkcja displayBlock do wyświetlania bloków
-function displayBlock(block, allBlocks) {
-    if (!block) {
-        console.error('Błąd: Blok jest niezdefiniowany');
-        return;
-    }
-
+function displayBlock(block, allBlocks, choiceList, storyContainer) {
     console.log("display block:", block);
 
     var blockDescription = $('#blockDescription');
     var choicesContainer = $('#choicesContainer');
 
     // Wyświetlenie opisu bloku
-    blockDescription.text(block.description);
+    blockDescription.text(block.Description);
+
+    // Aktualizacja tła kontenera na podstawie imagePath
+    //if (block.ImagePath) {
+        storyContainer.css('background-image', 'url("data:image/png;base64,' + block.ImagePath + '")');
+    //}
 
     // Wyczyszczenie kontenera na wybory
     choicesContainer.empty();
 
     // Iteracja przez dostępne wybory
-    $.each(block.choices.$values, function (index, choice) {
-        var button = $('<button>').text(choice.text);
-        button.click(function () {
-            var nextBlock = allBlocks.find(function (b) { return b.id === choice.outcomeBlock.id; });
-            displayBlock(nextBlock, allBlocks);
-        });
-        choicesContainer.append(button);
+    choiceList.forEach(function (choice) {
+        if (choice.SourceBlock.Id === block.Id) {
+            var button = $('<button>').text(choice.Text);
+            button.click(function () {
+                var nextBlock = allBlocks.find(function (b) {
+                    return b.Id === choice.OutcomeBlock.Id;
+                });
+                displayBlock(nextBlock, allBlocks, choiceList, storyContainer);
+            });
+            choicesContainer.append(button);
+        }
     });
 }
 

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "n3hbman/X0QAJh75bTS1yYN+wpC5CSbcYH4tt6FwHLg=",
+  "Hash": "8hOWzXrkY6MUkoymyDh61YcxqWfsGAvQpNvyREeqr0o=",
   "Source": "GraParagrafowa",
   "BasePath": "_content/GraParagrafowa",
   "Mode": "Default",
@@ -395,6 +395,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\wwwroot\\js\\update.js",
+      "SourceId": "GraParagrafowa",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\wwwroot\\",
+      "BasePath": "_content/GraParagrafowa",
+      "RelativePath": "js/update.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\update.js"
     },
     {
       "Identity": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
