@@ -606,3 +606,6 @@ C:\Users\barte\Desktop\ShowTime\Studia\semestr06\PZ\GraParagrafowa\bin\Debug\net
 C:\Users\User\Documents\GitHub\GraParagrafowa\bin\Debug\net6.0\PagedList.dll
 C:\Users\User\Documents\GitHub\GraParagrafowa\bin\Debug\net6.0\PagedList.Mvc.dll
 C:\Users\User\Documents\GitHub\GraParagrafowa\obj\Debug\net6.0\GraParagrafowa.csproj.ResolveComReference.cache
+C:\Users\barte\Desktop\ShowTime\Studia\semestr06\PZ\GraParagrafowa\bin\Debug\net6.0\PagedList.dll
+C:\Users\barte\Desktop\ShowTime\Studia\semestr06\PZ\GraParagrafowa\bin\Debug\net6.0\PagedList.Mvc.dll
+C:\Users\barte\Desktop\ShowTime\Studia\semestr06\PZ\GraParagrafowa\obj\Debug\net6.0\GraParagrafowa.csproj.ResolveComReference.cache

@@ -22,6 +22,44 @@ namespace GraParagrafowa.Controllers
         }
 
         [HttpGet]
+        public async Task<IActionResult> Player(int id)
+        {
+            var aaaaaa = await _context.Story
+                                       .Include(s => s.HistoryBlocks) // Eagerly load HistoryBlocks
+                                       .FirstOrDefaultAsync(s => s.Id == id);
+
+            var choiceschuj = await _context.Choice
+                                .Where(c => c.storryID == id)
+                                .ToListAsync();
+
+            var dto = new GameDTO
+            {
+                story = aaaaaa,
+                choice_list = choiceschuj
+            };
+
+            if (aaaaaa == null)
+            {
+                return NotFound();
+            }
+
+
+
+            var l = new List<DecisionBlock>();
+            foreach (var item in aaaaaa.HistoryBlocks)
+            {
+                l.Add(item);
+                Debug.WriteLine($"{item.Id}");
+                Debug.WriteLine("KURWOOOOOOOOOOOOOOOOOOOOOO");
+            }
+
+            Debug.WriteLine("ok");
+
+            return View(dto);
+        }
+
+
+        [HttpGet]
         public ViewResult Index(string sortOrder, string searchString, int? page, int pageSize = 5)
         {
             ViewBag.CurrentSort = sortOrder;

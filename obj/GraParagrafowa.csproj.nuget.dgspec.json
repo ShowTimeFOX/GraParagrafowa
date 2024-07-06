@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\GraParagrafowa.csproj": {}
+    "C:\\Users\\barte\\Desktop\\ShowTime\\Studia\\semestr06\\PZ\\GraParagrafowa\\GraParagrafowa.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\GraParagrafowa.csproj": {
+    "C:\\Users\\barte\\Desktop\\ShowTime\\Studia\\semestr06\\PZ\\GraParagrafowa\\GraParagrafowa.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\GraParagrafowa.csproj",
+        "projectUniqueName": "C:\\Users\\barte\\Desktop\\ShowTime\\Studia\\semestr06\\PZ\\GraParagrafowa\\GraParagrafowa.csproj",
         "projectName": "GraParagrafowa",
-        "projectPath": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\GraParagrafowa.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\obj\\",
+        "projectPath": "C:\\Users\\barte\\Desktop\\ShowTime\\Studia\\semestr06\\PZ\\GraParagrafowa\\GraParagrafowa.csproj",
+        "packagesPath": "C:\\Users\\barte\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\barte\\Desktop\\ShowTime\\Studia\\semestr06\\PZ\\GraParagrafowa\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\barte\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -92,24 +92,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[6.0.31, 6.0.31]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"

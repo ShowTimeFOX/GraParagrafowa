@@ -1,0 +1,21 @@
+﻿.pagination a {
+    text-decoration: none;
+}
+
+.pagination a, .pagination span {
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 5px;
+    min-width: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+    .pagination a:hover {
+        background-color: lightgrey;
+    }
+
+.pagination span {
+    transform: scale(1.2);
+}

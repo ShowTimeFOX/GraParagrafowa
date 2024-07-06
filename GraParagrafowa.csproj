@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\css\playerList.css" />
     <_ContentIncludedByDefault Remove="wwwroot\js\Zapisz.js" />
   </ItemGroup>
 

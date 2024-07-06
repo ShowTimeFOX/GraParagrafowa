@@ -1,22 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\",
+  "WorkspaceRootPath": "C:\\Users\\barte\\Desktop\\ShowTime\\Studia\\semestr06\\PZ\\GraParagrafowa\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F346E9FE-9B65-4AB4-BAEC-784BA5214F93}|GraParagrafowa.csproj|c:\\users\\user\\documents\\github\\graparagrafowa\\views\\stories\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{F346E9FE-9B65-4AB4-BAEC-784BA5214F93}|GraParagrafowa.csproj|c:\\users\\barte\\desktop\\showtime\\studia\\semestr06\\pz\\graparagrafowa\\views\\stories\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{F346E9FE-9B65-4AB4-BAEC-784BA5214F93}|GraParagrafowa.csproj|solutionrelative:views\\stories\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F346E9FE-9B65-4AB4-BAEC-784BA5214F93}|GraParagrafowa.csproj|c:\\users\\user\\documents\\github\\graparagrafowa\\controllers\\storiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F346E9FE-9B65-4AB4-BAEC-784BA5214F93}|GraParagrafowa.csproj|solutionrelative:controllers\\storiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F346E9FE-9B65-4AB4-BAEC-784BA5214F93}|GraParagrafowa.csproj|c:\\users\\user\\documents\\github\\graparagrafowa\\views\\stories\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F346E9FE-9B65-4AB4-BAEC-784BA5214F93}|GraParagrafowa.csproj|solutionrelative:views\\stories\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F346E9FE-9B65-4AB4-BAEC-784BA5214F93}|GraParagrafowa.csproj|c:\\users\\user\\documents\\github\\graparagrafowa\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F346E9FE-9B65-4AB4-BAEC-784BA5214F93}|GraParagrafowa.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{F346E9FE-9B65-4AB4-BAEC-784BA5214F93}|GraParagrafowa.csproj|c:\\users\\barte\\desktop\\showtime\\studia\\semestr06\\pz\\graparagrafowa\\wwwroot\\css\\playerlist.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{F346E9FE-9B65-4AB4-BAEC-784BA5214F93}|GraParagrafowa.csproj|solutionrelative:wwwroot\\css\\playerlist.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,58 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-06T15:12:16.169Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\Views\\Stories\\Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\barte\\Desktop\\ShowTime\\Studia\\semestr06\\PZ\\GraParagrafowa\\Views\\Stories\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Stories\\Index.cshtml",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\Views\\Stories\\Index.cshtml",
+              "ToolTip": "C:\\Users\\barte\\Desktop\\ShowTime\\Studia\\semestr06\\PZ\\GraParagrafowa\\Views\\Stories\\Index.cshtml",
               "RelativeToolTip": "Views\\Stories\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAQAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-06T14:54:34.536Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\Views\\Stories\\Details.cshtml",
-              "RelativeDocumentMoniker": "Views\\Stories\\Details.cshtml",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\Views\\Stories\\Details.cshtml",
-              "RelativeToolTip": "Views\\Stories\\Details.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAQwBcAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-06T14:33:13.832Z",
+              "WhenOpened": "2024-07-06T20:15:05.994Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "StoriesController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\Controllers\\StoriesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\StoriesController.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\Controllers\\StoriesController.cs",
-              "RelativeToolTip": "Controllers\\StoriesController.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAmwDgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-06T14:32:19.503Z",
+              "Title": "playerList.css",
+              "DocumentMoniker": "C:\\Users\\barte\\Desktop\\ShowTime\\Studia\\semestr06\\PZ\\GraParagrafowa\\wwwroot\\css\\playerList.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\playerList.css",
+              "ToolTip": "C:\\Users\\barte\\Desktop\\ShowTime\\Studia\\semestr06\\PZ\\GraParagrafowa\\wwwroot\\css\\playerList.css",
+              "RelativeToolTip": "wwwroot\\css\\playerList.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-07-06T20:14:11.046Z",
               "EditorCaption": ""
             }
           ]
