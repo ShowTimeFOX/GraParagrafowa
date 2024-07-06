@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8hOWzXrkY6MUkoymyDh61YcxqWfsGAvQpNvyREeqr0o=",
+  "Hash": "xNkh8mnqR8z7OO7ylupwQJeBhVEpQEetB/lI9Tz2pJE=",
   "Source": "GraParagrafowa",
   "BasePath": "_content/GraParagrafowa",
   "Mode": "Default",
@@ -378,6 +378,25 @@
       "OriginalItemSpec": "wwwroot\\js\\Kreator.js"
     },
     {
+      "Identity": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\wwwroot\\js\\SaveUpdate.js",
+      "SourceId": "GraParagrafowa",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\wwwroot\\",
+      "BasePath": "_content/GraParagrafowa",
+      "RelativePath": "js/SaveUpdate.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\SaveUpdate.js"
+    },
+    {
       "Identity": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\wwwroot\\js\\site.js",
       "SourceId": "GraParagrafowa",
       "SourceType": "Discovered",
@@ -414,6 +433,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\update.js"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\wwwroot\\js\\UpdateKreator.js",
+      "SourceId": "GraParagrafowa",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\wwwroot\\",
+      "BasePath": "_content/GraParagrafowa",
+      "RelativePath": "js/UpdateKreator.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\UpdateKreator.js"
     },
     {
       "Identity": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

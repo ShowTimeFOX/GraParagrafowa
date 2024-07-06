@@ -5,12 +5,17 @@
 }
 
 <h1>Lista opowieści</h1>
-
+<form method="get" asp-action="Index">
+    <p>
+        Find by name: <input type="text" name="searchString" />
+        <input type="submit" value="Search" />
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>
             <th>
-                Nazwa
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.NameSortParm">Name</a>
             </th>
             <th>
                 Obraz
@@ -30,8 +35,8 @@
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                   @*  <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> | *@
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> |
                     <a asp-action="Player" asp-route-id="@item.Id">> Zagraj</a>
                 </td>
             </tr>

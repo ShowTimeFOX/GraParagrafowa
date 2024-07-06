@@ -59,7 +59,7 @@
 #zoom-content {
     border: 1px solid black;
     width: calc(100% - 20px);
-    height: 500px;
+    height: 700px;
     overflow: scroll;
     background-color: #7dffb8;
     position: fixed;

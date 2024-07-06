@@ -4,23 +4,23 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>Szczegóły</h1>
 
 <div>
-    <h4>Story</h4>
+    
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
+            Nazwa Historii:
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
+            @Model.Name
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ImagePath)
+            Ilośc bloków w historii:
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ImagePath)
+            @Model.HistoryBlocks.Count
         </dd>
     </dl>
 </div>

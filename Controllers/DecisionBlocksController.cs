@@ -36,9 +36,6 @@ namespace GraParagrafowa.Controllers
                 Photo = "";
             }
 
-
-
-
             Dictionary<int, Dictionary<int, string>> wybory = new Dictionary<int, Dictionary<int, string>>();
             List<DecisionBlock> blocks = new List<DecisionBlock>();
             List<Choice> listawyborow = new List<Choice>();
@@ -100,23 +97,7 @@ namespace GraParagrafowa.Controllers
 
             foreach (var block in blocks)
             {
-                //Debug.WriteLine($"Id bloku: {block.InStoryId}");
-
-                //foreach(var choice in block.Choices)
-                //{
-                //    Debug.WriteLine($"Id dziecka: {choice.OutcomeBlock.InStoryId}");
-                //}
-
-                _context.DecisionBlock.Add(block);
-                //Debug.WriteLine($"________________________________________________");
-
-
-                //Debug.WriteLine($"Id bloku po zapisie: {block.InStoryId}");
-
-                //foreach (var choice in block.Choices)
-                //{
-                //    Debug.WriteLine($"Id dziecka po zapisie: {choice.OutcomeBlock.InStoryId}");
-                //}
+                _context.DecisionBlock.Add(block);   
             }
             _context.SaveChanges();
             await _context.SaveChangesAsync();
@@ -153,56 +134,6 @@ namespace GraParagrafowa.Controllers
 
             listablokowhistori = story_for_id.HistoryBlocks.ToList();
 
-            //foreach (var blok in listablokowhistori)
-            //{
-            //    if (blok.Choices == null)
-            //    {
-            //        blok.Choices = new List<Choice>();
-            //    }
-            //    if (wybory.ContainsKey(blok.InStoryId))
-            //    {
-            //        Dictionary<int, string> choices = wybory[blok.InStoryId];
-
-            //        foreach (var choice in choices)
-            //        {
-            //            var blokwyboru = listablokowhistori.First(c => c.InStoryId == choice.Key);
-            //            Debug.WriteLine($"Id bloku: {blok.InStoryId}");
-            //            Debug.WriteLine($"Id dziecka: {choice.Key}");
-
-            //            Choice obiektchoice = new Choice
-            //            {
-            //                Text = choice.Value,
-            //                OutcomeBlock = blokwyboru
-            //            };
-            //            _context.Choice.Add(obiektchoice);
-
-            //            Debug.WriteLine($"CHUJ>>>>>>>>");
-            //            Debug.WriteLine($"{obiektchoice.OutcomeBlock.InStoryId}");
-
-            //            listategogowna.Add( obiektchoice );
-
-            //        }
-            //    }
-                
-            //}
-            //_context.SaveChanges();
-            //await _context.SaveChangesAsync();
-
-            //foreach(var blok in listablokowhistori)
-            //{
-            //    if (wybory.ContainsKey(blok.InStoryId))
-            //    {
-            //        Dictionary<int, string> choices = wybory[blok.InStoryId]; //instoryid bloku outcome i text
-
-            //        foreach (var choice in choices)
-            //        {
-            //            Choice wybor = listategogowna.Find(c => c.OutcomeBlock.InStoryId == choice.Key);
-
-            //            blok.Choices.Add(wybor);
-            //        }
-            //    }
-                
-            //}
             _context.SaveChanges();
             await _context.SaveChangesAsync();
 
@@ -210,6 +141,175 @@ namespace GraParagrafowa.Controllers
         }
 
 
+
+
+
+
+
+
+
+
+
+
+
+        [HttpPost]
+        public async Task<IActionResult> HandleUpdate([FromBody] StoryData data)
+        {
+            Debug.WriteLine("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+            Debug.WriteLine(data.StoryId);
+            Debug.WriteLine("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+
+
+            var story = await _context.Story
+                                       .Include(s => s.HistoryBlocks) // Eagerly load HistoryBlocks
+                                       .FirstOrDefaultAsync(s => s.Id == data.StoryId);
+
+            var ListaWyborowHistorii = await _context.Choice
+                                .Where(c => c.storryID == data.StoryId)
+                                .ToListAsync();
+
+            
+
+            if (ListaWyborowHistorii.Any())
+            {
+                _context.Choice.RemoveRange(ListaWyborowHistorii); // Usuwasz obiekty z kontekstu
+                _context.SaveChanges(); // Zapisujesz zmiany w bazie danych
+            }
+
+
+
+            var blocksToRemove = story.HistoryBlocks.ToList(); // Pobierasz listę do usunięcia (przykład)
+
+            if (blocksToRemove.Any())
+            {
+                _context.DecisionBlock.RemoveRange(blocksToRemove); // Usuwasz obiekty z kontekstu
+                _context.SaveChanges(); // Zapisujesz zmiany w bazie danych
+            }
+
+
+
+
+            if (data == null || data.FormData == null)
+            {
+                return BadRequest("Invalid data.");
+            }
+
+            string storyName = data.StoryName;
+            List<StoryItem> formData = data.FormData;
+            string Photo;
+
+            if (data.Photo != null)
+            {
+                Photo = Convert.ToBase64String(data.Photo);
+            }
+            else
+            {
+                Photo = "";
+            }
+
+            Dictionary<int, Dictionary<int, string>> wybory = new Dictionary<int, Dictionary<int, string>>();
+            List<DecisionBlock> blocks = new List<DecisionBlock>();
+            List<Choice> listawyborow = new List<Choice>();
+
+            foreach (var item in formData)
+            {
+                var decisionBlock = new DecisionBlock
+                {
+                    InStoryId = int.Parse(item.Id),
+                    Description = item.Description,
+                    ImagePath = item.Image != null ? Convert.ToBase64String(item.Image) : "",
+                };
+
+                if (!string.IsNullOrEmpty(item.Responses))
+                {
+                    Dictionary<int, string> dict = new Dictionary<int, string>();
+                    var responses = item.Responses.Split(new[] { "&&$" }, StringSplitOptions.None);
+                    foreach (var response in responses)
+                    {
+                        var parts = response.Split(new[] { "#*$" }, StringSplitOptions.None);
+                        if (parts.Length == 2)
+                        {
+                            dict.Add(int.Parse(parts[0]), parts[1]);
+                        }
+                    }
+                    wybory.Add(int.Parse(item.Id), dict);
+                }
+
+                blocks.Add(decisionBlock);
+                Debug.WriteLine($"ilość wszystkich bloków: {blocks.Count}");
+                Debug.WriteLine($"Jakiś jego id: {decisionBlock.InStoryId}");
+            }
+
+            foreach (var block in blocks)
+            {
+
+                if (wybory.ContainsKey(block.InStoryId))
+                {
+                    Dictionary<int, string> choices = wybory[block.InStoryId];
+
+                    foreach (var choice in choices)
+                    {
+                        var blokwyboru = blocks.First(c => c.InStoryId == choice.Key);
+                        Debug.WriteLine($"Id bloku: {block.InStoryId}");
+                        Debug.WriteLine($"Id dziecka: {choice.Key}");
+
+                        Choice obiektchoice = new Choice
+                        {
+                            Text = choice.Value,
+                            OutcomeBlock = blokwyboru,
+                            SourceBlock = block,
+
+                        };
+                        _context.Add(obiektchoice);
+                        listawyborow.Add(obiektchoice);
+                    }
+                }
+            }
+
+            foreach (var block in blocks)
+            {
+                _context.DecisionBlock.Add(block);
+            }
+            _context.SaveChanges();
+            await _context.SaveChangesAsync();
+
+
+
+            // Handle the story name as needed
+            Debug.WriteLine($"Story Name: {storyName}");
+
+            //Story story = new Story();
+            story.Name = storyName;
+            story.HistoryBlocks = blocks;
+            story.ImagePath = Photo; //Tymczasowe żeby się to zapisało do bazy
+
+            //_context.Story.Add(story);
+
+            //await _context.SaveChangesAsync();
+
+
+            List<Choice> listategogowna = new List<Choice>(); //lista wszystkich wyborów w historii
+
+
+            Story story_for_id = _context.Story.Find(story.Id);
+
+
+            foreach (var wybor in listawyborow)
+            {
+                wybor.storryID = story.Id;
+            }
+
+            Debug.WriteLine($"Story Name: {story_for_id.Id}");
+
+            List<DecisionBlock> listablokowhistori = new List<DecisionBlock>();
+
+            listablokowhistori = story_for_id.HistoryBlocks.ToList();
+
+            _context.SaveChanges();
+            await _context.SaveChangesAsync();
+
+            return Json(new { success = true, message = "Historia została zaktualizowana pomyślnie." });
+        }
 
 
 

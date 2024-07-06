@@ -73,6 +73,14 @@
       "PackagePath": "staticwebassets\\js\\Kreator.js"
     },
     {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\wwwroot\\js\\SaveUpdate.js",
+      "PackagePath": "staticwebassets\\js\\SaveUpdate.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\wwwroot\\js\\UpdateKreator.js",
+      "PackagePath": "staticwebassets\\js\\UpdateKreator.js"
+    },
+    {
       "Id": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

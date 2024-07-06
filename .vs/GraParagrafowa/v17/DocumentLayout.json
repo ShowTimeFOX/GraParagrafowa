@@ -3,34 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F346E9FE-9B65-4AB4-BAEC-784BA5214F93}|GraParagrafowa.csproj|c:\\users\\user\\documents\\github\\graparagrafowa\\wwwroot\\js\\update.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{F346E9FE-9B65-4AB4-BAEC-784BA5214F93}|GraParagrafowa.csproj|solutionrelative:wwwroot\\js\\update.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{F346E9FE-9B65-4AB4-BAEC-784BA5214F93}|GraParagrafowa.csproj|c:\\users\\user\\documents\\github\\graparagrafowa\\views\\stories\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F346E9FE-9B65-4AB4-BAEC-784BA5214F93}|GraParagrafowa.csproj|solutionrelative:views\\stories\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F346E9FE-9B65-4AB4-BAEC-784BA5214F93}|GraParagrafowa.csproj|c:\\users\\user\\documents\\github\\graparagrafowa\\models\\decisionblock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F346E9FE-9B65-4AB4-BAEC-784BA5214F93}|GraParagrafowa.csproj|solutionrelative:models\\decisionblock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F346E9FE-9B65-4AB4-BAEC-784BA5214F93}|GraParagrafowa.csproj|c:\\users\\user\\documents\\github\\graparagrafowa\\controllers\\storiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F346E9FE-9B65-4AB4-BAEC-784BA5214F93}|GraParagrafowa.csproj|solutionrelative:controllers\\storiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/GraParagrafowa.Data/True/SqlTable/dbo.Choice.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/GraParagrafowa.Data/True/SqlTable/dbo.DecisionBlock.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F346E9FE-9B65-4AB4-BAEC-784BA5214F93}|GraParagrafowa.csproj|c:\\users\\user\\documents\\github\\graparagrafowa\\views\\stories\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F346E9FE-9B65-4AB4-BAEC-784BA5214F93}|GraParagrafowa.csproj|solutionrelative:views\\stories\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F346E9FE-9B65-4AB4-BAEC-784BA5214F93}|GraParagrafowa.csproj|c:\\users\\user\\documents\\github\\graparagrafowa\\wwwroot\\js\\player.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{F346E9FE-9B65-4AB4-BAEC-784BA5214F93}|GraParagrafowa.csproj|solutionrelative:wwwroot\\js\\player.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F346E9FE-9B65-4AB4-BAEC-784BA5214F93}|GraParagrafowa.csproj|c:\\users\\user\\documents\\github\\graparagrafowa\\models\\choice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F346E9FE-9B65-4AB4-BAEC-784BA5214F93}|GraParagrafowa.csproj|solutionrelative:models\\choice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F346E9FE-9B65-4AB4-BAEC-784BA5214F93}|GraParagrafowa.csproj|c:\\users\\user\\documents\\github\\graparagrafowa\\wwwroot\\js\\kreator.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{F346E9FE-9B65-4AB4-BAEC-784BA5214F93}|GraParagrafowa.csproj|solutionrelative:wwwroot\\js\\kreator.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{F346E9FE-9B65-4AB4-BAEC-784BA5214F93}|GraParagrafowa.csproj|c:\\users\\user\\documents\\github\\graparagrafowa\\views\\stories\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F346E9FE-9B65-4AB4-BAEC-784BA5214F93}|GraParagrafowa.csproj|solutionrelative:views\\stories\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -40,105 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Player.js",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\wwwroot\\js\\Player.js",
-              "RelativeDocumentMoniker": "wwwroot\\js\\Player.js",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\wwwroot\\js\\Player.js",
-              "RelativeToolTip": "wwwroot\\js\\Player.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-07-04T14:50:39.153Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "dbo.DecisionBlock [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/GraParagrafowa.Data/True/SqlTable/dbo.DecisionBlock.sql",
-              "ToolTip": "dbo.DecisionBlock [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-07-04T18:14:22.824Z",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\Views\\Stories\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Stories\\Index.cshtml",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\Views\\Stories\\Index.cshtml",
+              "RelativeToolTip": "Views\\Stories\\Index.cshtml",
+              "ViewState": "AQIAABQAAAAAAAAAAAAAAB4AAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-06T14:54:34.536Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "dbo.Choice [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/GraParagrafowa.Data/True/SqlTable/dbo.Choice.sql",
-              "ToolTip": "dbo.Choice [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-07-04T18:09:35.068Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Choice.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\Models\\Choice.cs",
-              "RelativeDocumentMoniker": "Models\\Choice.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\Models\\Choice.cs",
-              "RelativeToolTip": "Models\\Choice.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T18:02:54.762Z",
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\Views\\Stories\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Stories\\Details.cshtml",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\Views\\Stories\\Details.cshtml",
+              "RelativeToolTip": "Views\\Stories\\Details.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-06T14:33:13.832Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DecisionBlock.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\Models\\DecisionBlock.cs",
-              "RelativeDocumentMoniker": "Models\\DecisionBlock.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\Models\\DecisionBlock.cs",
-              "RelativeToolTip": "Models\\DecisionBlock.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAUAAAAcAAAA",
+              "Title": "StoriesController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\Controllers\\StoriesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\StoriesController.cs",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\Controllers\\StoriesController.cs",
+              "RelativeToolTip": "Controllers\\StoriesController.cs",
+              "ViewState": "AQIAADsAAAAAAAAAAAAswFkAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T17:58:04.073Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Kreator.js",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\wwwroot\\js\\Kreator.js",
-              "RelativeDocumentMoniker": "wwwroot\\js\\Kreator.js",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\wwwroot\\js\\Kreator.js",
-              "RelativeToolTip": "wwwroot\\js\\Kreator.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC8AAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-07-04T17:27:13.444Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "update.js",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\wwwroot\\js\\update.js",
-              "RelativeDocumentMoniker": "wwwroot\\js\\update.js",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\wwwroot\\js\\update.js",
-              "RelativeToolTip": "wwwroot\\js\\update.js",
-              "ViewState": "AQIAABIAAAAAAAAAAAAowCcAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-07-04T17:14:00.669Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\Views\\Stories\\Edit.cshtml",
-              "RelativeDocumentMoniker": "Views\\Stories\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\GraParagrafowa\\Views\\Stories\\Edit.cshtml",
-              "RelativeToolTip": "Views\\Stories\\Edit.cshtml",
-              "ViewState": "AQIAACIAAAAAAAAAAAAkwCYAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-04T17:06:16.5Z",
+              "WhenOpened": "2024-07-06T14:32:19.503Z",
               "EditorCaption": ""
             }
           ]

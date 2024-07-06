@@ -1,16 +1,18 @@
 ﻿$(document).ready(function () {
 
 
-    var idCounter = 1; // Inicjalizacja licznika ID
-    
-        
+    var idCounter; // Inicjalizacja licznika ID
+    let juz = false;
 
-    
+
+
+
 
     // Event listener dla przycisków "Stwórz"
     $('body').on('click', '.create-button', function () {
         addNewStructure($(this));
         checkAndToggleDisable($(this));
+        
     });
 
     // Event listener dla przycisków "Usuń"
@@ -19,6 +21,15 @@
     });
 
     function addNewStructure($button) {
+
+        if (juz == false) {
+
+            let inputElement = document.querySelector('input[name="counter"]');
+            idCounter = inputElement.value;
+            juz = true;
+
+        }
+        
         // Znajdowanie parent elementu, który wywołał event
         var $parentDiv = $button.closest('.parent');
 

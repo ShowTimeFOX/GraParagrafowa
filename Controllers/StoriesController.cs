@@ -57,28 +57,44 @@ namespace GraParagrafowa.Controllers
             return View(dto);
         }
 
-        // GET: Stories
-        public async Task<IActionResult> Index()
+        [HttpGet]
+        public ViewResult Index(string sortOrder, string searchString)
         {
-              return _context.Story != null ? 
-                          View(await _context.Story.ToListAsync()) :
-                          Problem("Entity set 'GraParagrafowaContext.Story'  is null.");
+            ViewBag.CurrentSort = sortOrder;
+            //Debug.WriteLine("OKKK");
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+
+
+            ViewBag.CurrentFilter = searchString;
+
+            var stories = from s in _context.Story select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                //Debug.WriteLine("SEARCH");
+                stories = stories.Where(s => s.Name.Contains(searchString));
+            }
+
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    stories = stories.OrderByDescending(s => s.Name);
+                    break;
+                default:
+                    stories = stories.OrderBy(s => s.Name);
+                    break;
+            }
+
+            return View(stories.ToList());
         }
 
         // GET: Stories/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Story == null)
-            {
-                return NotFound();
-            }
-
             var story = await _context.Story
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (story == null)
-            {
-                return NotFound();
-            }
+                                       .Include(s => s.HistoryBlocks) // Eagerly load HistoryBlocks
+                                       .FirstOrDefaultAsync(s => s.Id == id);
 
             return View(story);
         }
@@ -168,19 +184,39 @@ namespace GraParagrafowa.Controllers
         // GET: Stories/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Story == null)
-            {
-                return NotFound();
-            }
 
             var story = await _context.Story
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (story == null)
+                                       .Include(s => s.HistoryBlocks) // Eagerly load HistoryBlocks
+                                       .FirstOrDefaultAsync(s => s.Id == id);
+
+            var ListaWyborowHistorii = await _context.Choice
+                                .Where(c => c.storryID == id)
+                                .ToListAsync();
+
+
+
+            if (ListaWyborowHistorii.Any())
             {
-                return NotFound();
+                _context.Choice.RemoveRange(ListaWyborowHistorii); // Usuwasz obiekty z kontekstu
+                _context.SaveChanges(); // Zapisujesz zmiany w bazie danych
             }
 
-            return View(story);
+
+
+            var blocksToRemove = story.HistoryBlocks.ToList(); // Pobierasz listę do usunięcia (przykład)
+
+            if (blocksToRemove.Any())
+            {
+                _context.DecisionBlock.RemoveRange(blocksToRemove); // Usuwasz obiekty z kontekstu
+                _context.SaveChanges(); // Zapisujesz zmiany w bazie danych
+            }
+
+            
+            _context.Story.Remove(story);
+            
+
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
         // POST: Stories/Delete/5

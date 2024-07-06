@@ -6,15 +6,16 @@
 }
 @section head {
     <link rel="stylesheet" href="~/css/creator.css" />
-    <script src="~/js/Kreator.js"></script>
-    <script src="~/js/Zapisz.js"></script>
+    <script src="~/js/UpdateKreator.js"></script>
+    <script src="~/js/SaveUpdate.js"></script>
     <script src="~/js/update.js"></script>
 }
 <div id="creator-header">
     <div>
-        <h1 style="display:inline-block">Kreator</h1>
+        <h1 style="display:inline-block">Zaktualizuj Historię</h1>
         Nazwa Historii:
         <input type="text" name="Name" value="@Model.story.Name" />
+        <input type="hidden" name="counter" value="0" />
         <input type="file" name="Photo"></input>
     </div>
     <div style="width:300px">
@@ -35,28 +36,7 @@
     </div>
     </div> *@
 
-    <div class="global">
-        <div class="parent">
-            <input type="hidden" name="id" value="0" />
-            @* opis <input type="type" name="description" value="" /> *@
-            opis <textarea name="description">@Model.story.HistoryBlocks[0].Description</textarea>
-            obraz <input type="file" name="imagePath" value="" />
-            <hr />
-            ilosc decyzji
-            <select name="decisionCount">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-            </select>
-            <input type="hidden" name="children" value="" />
-            <input type="button" value="Stwórz" class="create-button" name="Create" value="" />
-            @* <input type="button" value="Usuń" class="delete-button" name="Delete" value="" /> *@
-        </div>
-        <div class="children">
-        </div>
-    </div>
+    
 </div>
 <script>
     // Definicja danych modelu w formacie JSON
