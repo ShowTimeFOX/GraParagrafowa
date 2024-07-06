@@ -7,7 +7,7 @@
 <h1>Lista opowieści</h1>
 <form method="get" asp-action="Index">
     <p>
-        Find by name: <input type="text" name="searchString" />
+        Find by name: <input type="text" name="searchString" value="@ViewBag.CurrentFilter" />
         <input type="submit" value="Search" />
     </p>
 </form>
@@ -43,3 +43,25 @@
         }
     </tbody>
 </table>
+
+<div class="pagination">
+    @if (ViewBag.CurrentPage > 1)
+    {
+        <a asp-action="Index" asp-route-page="@(ViewBag.CurrentPage - 1)" asp-route-sortOrder="@ViewBag.CurrentSort" asp-route-searchString="@ViewBag.CurrentFilter">Previous</a>
+    }
+    @for (int i = 1; i <= ViewBag.TotalPages; i++)
+    {
+        if (i == ViewBag.CurrentPage)
+        {
+            <span>@i</span>
+        }
+        else
+        {
+            <a asp-action="Index" asp-route-page="@i" asp-route-sortOrder="@ViewBag.CurrentSort" asp-route-searchString="@ViewBag.CurrentFilter">@i</a>
+        }
+    }
+    @if (ViewBag.CurrentPage < ViewBag.TotalPages)
+    {
+        <a asp-action="Index" asp-route-page="@(ViewBag.CurrentPage + 1)" asp-route-sortOrder="@ViewBag.CurrentSort" asp-route-searchString="@ViewBag.CurrentFilter">Next</a>
+    }
+</div>

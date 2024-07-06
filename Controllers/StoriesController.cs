@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using GraParagrafowa.Data;
 using GraParagrafowa.Models;
 using System.Diagnostics;
+using PagedList;
 
 namespace GraParagrafowa.Controllers
 {
@@ -21,60 +22,18 @@ namespace GraParagrafowa.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Player(int id)
-        {
-            var aaaaaa = await _context.Story
-                                       .Include(s => s.HistoryBlocks) // Eagerly load HistoryBlocks
-                                       .FirstOrDefaultAsync(s => s.Id == id);
-
-            var choiceschuj = await _context.Choice
-                                .Where(c => c.storryID == id)
-                                .ToListAsync();
-
-            var dto = new GameDTO
-            {
-                story = aaaaaa,
-                choice_list = choiceschuj
-            };
-
-            if (aaaaaa == null)
-            {
-                return NotFound();
-            }
-
-            
-
-            var l = new List<DecisionBlock>();
-            foreach (var item in aaaaaa.HistoryBlocks)
-            {
-                l.Add(item);
-                Debug.WriteLine($"{item.Id}");
-                Debug.WriteLine("KURWOOOOOOOOOOOOOOOOOOOOOO");
-            }
-
-            Debug.WriteLine("ok");
-
-            return View(dto);
-        }
-
-        [HttpGet]
-        public ViewResult Index(string sortOrder, string searchString)
+        public ViewResult Index(string sortOrder, string searchString, int? page, int pageSize = 5)
         {
             ViewBag.CurrentSort = sortOrder;
-            //Debug.WriteLine("OKKK");
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-
-
             ViewBag.CurrentFilter = searchString;
 
             var stories = from s in _context.Story select s;
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                //Debug.WriteLine("SEARCH");
                 stories = stories.Where(s => s.Name.Contains(searchString));
             }
-
 
             switch (sortOrder)
             {
@@ -86,8 +45,17 @@ namespace GraParagrafowa.Controllers
                     break;
             }
 
-            return View(stories.ToList());
+            int pageNumber = (page ?? 1);
+            int totalItems = stories.Count();
+            var items = stories.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
+
+            ViewBag.TotalPages = (int)Math.Ceiling((double)totalItems / pageSize);
+            ViewBag.CurrentPage = pageNumber;
+
+            return View(items);
         }
+
+
 
         // GET: Stories/Details/5
         public async Task<IActionResult> Details(int? id)
